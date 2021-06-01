@@ -26,7 +26,7 @@ for i in range(1,max_output_row+1):
     for j in range(1,max_input_row+1):
         cell_in = input_sheet.cell(row = j, column = 2)
         if cell_in.value != None:
-            if cell_out.value == cell_in.value:
+            if cell_out.value == cell_in.value and "Other" not in cell_out.value:
                 output_sheet.cell(row=i,column=out_col).value = '=\'CTB 20\'!AM{}'.format(j)
     #wb.save("outputfile.xlsx")  
 wb.save("outputfile.xlsx")   
